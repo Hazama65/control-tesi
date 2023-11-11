@@ -1,8 +1,10 @@
+import { LoginPage } from "./auth/pages/LoginPage";
+
 function App() {
 
   return (
     <>
-      <h2>App</h2>
+      <LoginPage />
     </>
   )
 }

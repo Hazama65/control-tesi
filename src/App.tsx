@@ -1,8 +1,10 @@
+import { RegisterPage } from "./auth/pages/RegisterPage"
+
 function App() {
 
   return (
     <>
-      <h2>App</h2>
+      <RegisterPage/>
     </>
   )
 }

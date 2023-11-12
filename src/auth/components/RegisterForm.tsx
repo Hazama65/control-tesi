@@ -1,5 +1,3 @@
-import {Link} from 'react-router-dom'
-
 
 export const RegisterForm = () => {
     return (
@@ -8,45 +6,45 @@ export const RegisterForm = () => {
                 <h2>Registration Form</h2>
 
                 <div className="inputbox">
-                    <span>Nombre</span>
+                    <span>First Name</span>
                     <input type="text" id="first_name" name="first_name" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Apellido Paterno</span>
+                    <span>Last Name</span>
                     <input type="text" id="last_name" name="last_name" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Apellido Materno</span>
+                    <span>Middle Name</span>
                     <input type="text" id="middle_name" name="middle_name" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Correo Electronico</span>
+                    <span>Email</span>
                     <input type="email" id="email" name="email" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Contraseña</span>
+                    <span>Password</span>
                     <input type="password" id="password" name="password" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Matricula</span>
+                    <span>Registration Number</span>
                     <input type="text" id="registration_number" name="registration_number" required/>
                     <i></i>
                 </div>
 
-                <input type="submit" value="Registrate"/>
+                <input type="submit" value="Register"/>
 
                 <div className="register-link">
-                    <p>¿Ya tienes Cuenta? <Link to={'/Login'}>Ingresa</Link></p>
+                    <p>Already have an account? <a href="#">Log in</a></p>
                 </div>
             </form>
         </>

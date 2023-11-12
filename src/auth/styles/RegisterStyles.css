@@ -10,10 +10,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #edfccb;
+    background-color: #fce7e7;
 }
 
-.register {
+.box {
     position: relative;
     display: flex;
     width: 542px;
@@ -21,11 +21,11 @@ body {
     background: #1c1c1c;
     border-radius:  8px;
     overflow: hidden;
-    box-shadow: 0 12px 28px #88cb17;
+    box-shadow: 0 12px 28px #e25162;
 }
 
 
-.register form {
+.box form {
     flex: 1;
     inset: 4px;
     background: #222;
@@ -36,20 +36,20 @@ body {
     align-items: center;
 }
 
-.register form h2 {
+.box form h2 {
     color: #ffff;
     font-weight: 500;
     text-align: center;
     letter-spacing: 0.1em;
 }
 
-.register form .inputbox {
+.box form .inputbox {
     position: relative;
     width: 80%;
     margin-top: 20px;
 }
 
-.register form .inputbox input {
+.box form .inputbox input {
     position: relative;
     width: 100%;
     padding: 20px 10px 10px;
@@ -64,7 +64,7 @@ body {
     z-index: 10;
 }
 
-.register form .inputbox span {
+.box form .inputbox span {
     position: relative;
     left: 0;
     padding: 10px 0px 10px;
@@ -75,7 +75,7 @@ body {
     transition: 0.5s;
 }
 
-.register form .inputbox i {
+.box form .inputbox i {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -88,12 +88,12 @@ body {
     pointer-events: none;
 }
 
-.register form .inputbox input:valid ~ i,
-.register form .inputbox input:focus ~ i {
+.box form .inputbox input:valid ~ i,
+.box form .inputbox input:focus ~ i {
     height: 45px;
 }
 
-.register form input[type="submit"] {
+.box form input[type="submit"] {
     border: none;
     outline: none;
     padding: 9px 25px;
@@ -106,24 +106,24 @@ body {
     margin-top: 30px;
 }
 
-.register form input[type="submit"]:active {
-    background-color:#68a20e;
+.box form input[type="submit"]:active {
+    background-color:#ad233d;
     color: #ffff;
     opacity: 0.8;
 }
 
-.register form .register-link {
+.box form .register-link {
     margin-top: 20px;
     text-align: center;
     color: #ffff;
 }
 
-.register form .register-link a {
+.box form .register-link a {
     color: #ffff;
     text-decoration: underline;
     transition: color 0.3s;
 }
 
-.register form .register-link a:hover {
-    color: #68a20e;
+.box form .register-link a:hover {
+    color: #ad233d;
 }

@@ -5,19 +5,19 @@ export const LoginForm = () => {
       <form id="login_form" method="post" autoComplete="off">
           <h2>Login</h2>
           <div className="inputbox">
-              <span>User</span>
+              <span>Usuario</span>
               <input type="text" id="user" name="user" required/>
               <i></i>
           </div>
           <div className="inputbox">
-              <span>Password</span>
+              <span>Contraseña</span>
               <input type="password" id="password" name="password" required/>
               <i></i>
           </div>
           <br/>
-          <input type="submit" value="Login"/>
+          <input type="submit" value="Ingresar"/>
           
-          <p className="register-link">Don't have an account? <a href="registration.html">Sign Up</a></p>
+          <p className="register-link">¿No Tienes Cuenta? <a href="registration.html">Registrate</a></p>
       </form>
     </>
   )

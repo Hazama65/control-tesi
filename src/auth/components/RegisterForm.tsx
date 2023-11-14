@@ -6,42 +6,42 @@ export const RegisterForm = () => {
                 <h2>Registration Form</h2>
 
                 <div className="inputbox">
-                    <span>First Name</span>
+                    <span>Nombre</span>
                     <input type="text" id="first_name" name="first_name" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Last Name</span>
+                    <span>Apellido Paterno</span>
                     <input type="text" id="last_name" name="last_name" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Middle Name</span>
+                    <span>Apellido Materno</span>
                     <input type="text" id="middle_name" name="middle_name" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Email</span>
+                    <span>Correo Electronico</span>
                     <input type="email" id="email" name="email" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Password</span>
+                    <span>Contraseña</span>
                     <input type="password" id="password" name="password" required/>
                     <i></i>
                 </div>
 
                 <div className="inputbox">
-                    <span>Registration Number</span>
+                    <span>Matricula</span>
                     <input type="text" id="registration_number" name="registration_number" required/>
                     <i></i>
                 </div>
 
-                <input type="submit" value="Register"/>
+                <input type="submit" value="Registrate"/>
 
                 <div className="register-link">
                     <p>Already have an account? <a href="#">Log in</a></p>

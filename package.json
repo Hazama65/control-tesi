@@ -8,8 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "npm run build",
-    "start": "npm run deploy"
+    "start": "serve dist -s -n -L -p $PORT"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -20,6 +19,7 @@
     "react-redux": "^8.1.3",
     "react-router-dom": "^6.18.0",
     "redux": "^4.2.1",
+    "serve": "^14.2.1",
     "yup": "^1.3.2"
   },
   "devDependencies": {

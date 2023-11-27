@@ -11,7 +11,6 @@ import { AppRouter } from './routers/AppRouter'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={ store }>
-
       <AppRouter />
     </Provider>
   </React.StrictMode>,

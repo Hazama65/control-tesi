@@ -4,7 +4,7 @@ import '../styles/RegisterStyles.css'
 export const RegisterPage = () => {
     return (
         <>
-            <div className="box">
+            <div className="register">
                 <RegisterForm/>
             </div>
         </>

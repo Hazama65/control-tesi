@@ -12,7 +12,7 @@ body{
     align-items: center;
     min-height: 100vh;
     /* background: linear-gradient(to bottom, #450c19, #ad233d); */
-    background-color: #fce7e7;
+    background-color: #edfccb;
 }
 
 .box {
@@ -23,13 +23,13 @@ body{
     background: #1c1c1c;
     border-radius: 64px 96px 128px 8px;
     overflow: hidden;
-    box-shadow: 0 12px 28px  #e25162; /* Añade un box-shadow */
+    box-shadow: 0 12px 28px  #88cb17; /* Añade un box-shadow */
 }
 
 
 .box .imagen {
     flex: 1; /* Ocupa todo el espacio disponible en la caja */
-    background: #7c1f37;
+    background: #4f7b10;
 }
 
 .box .imagen img {
@@ -120,12 +120,13 @@ body{
 }
 
 .box form input[type="submit"]:active{
+    background-color:#68a20e;
+    color: #ffff;
     opacity: 0.8;
 
 }
 
 
-/* Otros estilos ... */
 .box form .register-link {
     margin-top: 20px;
     text-align: center;
@@ -139,5 +140,9 @@ body{
 }
 
 .box form .register-link a:hover {
-    color: #ad233d; /* Cambia el color al pasar el ratón sobre el enlace */
+    color: #68a20e; 
+}
+
+.error-message {
+    color: red;
 }

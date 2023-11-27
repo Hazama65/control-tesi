@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 
 export const RegisterForm = () => {
     return (
@@ -44,7 +46,7 @@ export const RegisterForm = () => {
                 <input type="submit" value="Registrate"/>
 
                 <div className="register-link">
-                    <p>Already have an account? <a href="#">Log in</a></p>
+                    <p>¿Ya tienes Cuenta? <Link to={'/Login'}>Ingresa</Link></p>
                 </div>
             </form>
         </>

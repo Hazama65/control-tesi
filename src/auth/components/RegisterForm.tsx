@@ -1,54 +1,115 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { Formik,Form } from 'formik';
+import * as Yup from 'yup';
+import { MyTextInput } from './formik/MyTextInput';
+import { MySelect } from './formik/MySelect';
 
+
+
+const initialValues = {
+    first_name:'',
+    last_name: '',
+    middle_name: '',
+    email: '',
+    password: '',
+    registration_number: '',
+    career: ''
+}
+
+const RegisterSchema = Yup.object().shape({
+    first_name: Yup.string().required('Nombre Requerido'),
+    last_name: Yup.string().required('Apellido Paterno Requerido'),
+    middle_name: Yup.string().required('Apellido Materno Requerido'),
+    email: Yup.string().email('El Email no es Valido').required('El Email es Requerido'),
+    password: Yup.string().required('Contraseña Requerida'),
+    registration_number: Yup.number().required('Matricula Requerida'),
+    career:Yup.string().notOneOf(['Seleccione'],'Esta Opcion no es Permitida').required('Carrera Requerida')
+})
 
 export const RegisterForm = () => {
+
+
+    const onSubmit = (values:any) => {
+        console.log(values);
+        // Aquí puedes realizar la lógica para enviar los datos al servidor, etc.
+    };
+
+    
+    
     return (
         <>
-            <form action="/process_registration" method="post">
-                <h2>Registration Form</h2>
+        <Formik
+        initialValues={initialValues}
+        validationSchema={RegisterSchema}
+        onSubmit={onSubmit}
+        >
+            {
+                ()=>(
+                    <Form>
+                        <h2>Registration Form</h2>
 
-                <div className="inputbox">
-                    <span>Nombre</span>
-                    <input type="text" id="first_name" name="first_name" required/>
-                    <i></i>
-                </div>
+                        <MyTextInput
+                            label={'Nombre'}
+                            name={'first_name'}
+                            id="first_name"
+                            required
+                        />
 
-                <div className="inputbox">
-                    <span>Apellido Paterno</span>
-                    <input type="text" id="last_name" name="last_name" required/>
-                    <i></i>
-                </div>
+                        <MyTextInput
+                            label={'Apellido Paterno'}
+                            name={'last_name'}
+                            id="last_name"
+                            required
+                        />
 
-                <div className="inputbox">
-                    <span>Apellido Materno</span>
-                    <input type="text" id="middle_name" name="middle_name" required/>
-                    <i></i>
-                </div>
+                        <MyTextInput
+                            label={'Apellido Materno'}
+                            name={'middle_name'}
+                            id="middle_name"
+                            required
+                        />
 
-                <div className="inputbox">
-                    <span>Correo Electronico</span>
-                    <input type="email" id="email" name="email" required/>
-                    <i></i>
-                </div>
+                        <MyTextInput
+                            label={'Email'}
+                            name={'email'}
+                            id="email"
+                            required
+                        />
+                        
+                        <MyTextInput
+                            label={'Contraseña'}
+                            name={'password'}
+                            id="password"
+                            required
+                        />
 
-                <div className="inputbox">
-                    <span>Contraseña</span>
-                    <input type="password" id="password" name="password" required/>
-                    <i></i>
-                </div>
+                        <MySelect
+                            label={'Carrera'}
+                            name={'career'}
+                        >
+                            <option value="Seleccione">Seleccione</option>
+                            <option value="Ingenieria en Sistemas Computacionales">Ingeniería en Sistemas Computacionales</option>
+                            <option value="Ingenieria Ambiental">Ingeniería Ambiental</option>
+                            <option value="Ingenieria Electronica">Ingeniería Electrónica</option>
+                            <option value="Ingenieria Biomedica">Ingeniería Biomédica</option>
+                            <option value="Ingenieria Informatica">Ingeniería Informática</option>
+                            <option value="Licenciatura en Administración">Licenciatura en Administración</option>
+                            <option value="Arquitectura">Arquitectura</option>
+                        </MySelect>
+                        
 
-                <div className="inputbox">
-                    <span>Matricula</span>
-                    <input type="text" id="registration_number" name="registration_number" required/>
-                    <i></i>
-                </div>
+                        <input type="submit" value="Registrate" />
 
-                <input type="submit" value="Registrate"/>
+                        <div className="register-link">
+                            <p>¿Ya tienes Cuenta? <Link to={'/auth/login'}>Ingresa</Link></p>
+                        </div> 
 
-                <div className="register-link">
-                    <p>¿Ya tienes Cuenta? <Link to={'/Login'}>Ingresa</Link></p>
-                </div>
-            </form>
+                    </Form>
+                )
+            }
+
+        </Formik>
+
         </>
     )
 }

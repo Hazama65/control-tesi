@@ -19,7 +19,7 @@ export const MyTextInput = ({label, ...props}: InputProps) => {
             <span>{label}</span>
             <input {...field} {...props} />
             <i></i> 
-           
+          
         </div>
         <ErrorMessage name={props.name} component="div" className="error-message" />
     </>

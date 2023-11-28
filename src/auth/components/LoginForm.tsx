@@ -1,6 +1,9 @@
 import {Link} from 'react-router-dom';
-import { Formik,Field,FormikHelpers,ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { MyTextInput } from './formik/MyTextInput';
+import { useAuthStore } from '../../hooks/useAuth';
+
 
 
 const initialValues ={
@@ -13,12 +16,24 @@ const SignupSchema = Yup.object().shape({
   password: Yup.string().required('Contraseña Requerida') 
 });
 
-const onSubmit = (values: typeof initialValues,{setFieldError}:FormikHelpers<typeof initialValues>) =>{
-  console.log('values', values),
-  setFieldError('password','Contraseña incorrecta');
-  // resetForm();
+interface LoginProps {
+  email: string;
+  password: string;
 }
+
+
 export const LoginForm = () => {
+
+  const { startLogin } = useAuthStore();
+
+  // const {user, status} = useSelector( (state: StateProps) => state.user )
+  
+  const onSubmit = async (values: LoginProps ) =>{
+    
+    startLogin(values);
+
+  }
+
   return (
     <>
     <Formik
@@ -26,29 +41,36 @@ export const LoginForm = () => {
       validationSchema={SignupSchema}
       onSubmit={onSubmit}
     >
-      {({handleSubmit})=>(
-        <form onSubmit={handleSubmit}>
-          <h2>Login</h2>
-          <div className="inputbox">
-            <span>Email</span>
-            <Field name="email" type="text" id="email" required />
-            <i></i>
-          </div>
-            <ErrorMessage name="email" component="div" className="error-message" />
-          <div className="inputbox">
-            <span>Contraseña</span>
-            <Field type="password" id="password" name="password" required />
-            <i></i>
-          </div>
-            <ErrorMessage name="password" component="div" className="error-message" />
-          <br />
-          <input type="submit" value="Ingresar" />
+      {
+        ()=>(
+          <Form >
+            <h2>Login</h2>
+          
+              <MyTextInput 
+                label={'Email'} 
+                name={'email'} 
+                id="email" 
+                required
+              />
 
-          <p className="register-link">
-            ¿No Tienes Cuenta? <Link to={'/'}>Registrate</Link>
-          </p>
-        </form>
-      )}
+              <MyTextInput 
+                label={'Ingresa tu contraseña'} 
+                name={'password'} 
+                id="password" 
+                required
+              />
+            
+            {/* <br /> */}
+            <input type="submit" value="Ingresar" />
+
+            <p className="register-link">
+              ¿No Tienes Cuenta? <Link to={'/auth/register'}>Registrate</Link>
+            </p>
+
+
+          </Form>
+        )
+      }
 
     </Formik>
 

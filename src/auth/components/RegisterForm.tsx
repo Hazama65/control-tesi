@@ -3,6 +3,8 @@ import { Formik,Form } from 'formik';
 import * as Yup from 'yup';
 import { MyTextInput } from './formik/MyTextInput';
 import { MySelect } from './formik/MySelect';
+import { useEffect, useState } from 'react';
+import controlApi from '../../config/controlApi';
 
 
 
@@ -26,15 +28,36 @@ const RegisterSchema = Yup.object().shape({
     career:Yup.string().notOneOf(['Seleccione'],'Esta Opcion no es Permitida').required('Carrera Requerida')
 })
 
+interface DegreesProps {
+    degree: string;
+    id_degree: number;
+
+}
+
+const initialStateDegrees: DegreesProps = {
+    degree: '',
+    id_degree: 0
+}
+
 export const RegisterForm = () => {
 
+    const [degrees, setDegrees] =  useState<DegreesProps[]>([initialStateDegrees])
 
     const onSubmit = (values:any) => {
         console.log(values);
         // Aquí puedes realizar la lógica para enviar los datos al servidor, etc.
     };
 
+    useEffect(() => {
+        
+        controlApi.get('/degrees')
+            .then((response) => setDegrees(response.data))
+            .catch(error => console.error(error));
     
+        
+    }, [])
+    
+   
     
     return (
         <>
@@ -88,13 +111,12 @@ export const RegisterForm = () => {
                             name={'career'}
                         >
                             <option value="Seleccione">Seleccione</option>
-                            <option value="Ingenieria en Sistemas Computacionales">Ingeniería en Sistemas Computacionales</option>
-                            <option value="Ingenieria Ambiental">Ingeniería Ambiental</option>
-                            <option value="Ingenieria Electronica">Ingeniería Electrónica</option>
-                            <option value="Ingenieria Biomedica">Ingeniería Biomédica</option>
-                            <option value="Ingenieria Informatica">Ingeniería Informática</option>
-                            <option value="Licenciatura en Administración">Licenciatura en Administración</option>
-                            <option value="Arquitectura">Arquitectura</option>
+                            {
+                                (degrees) && degrees.map( degree => (
+
+                                    <option key={degree.degree} value={degree.id_degree}>{degree.degree}</option>
+                                ))
+                            }
                         </MySelect>
                         
 

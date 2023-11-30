@@ -4,7 +4,7 @@ import { ErrorMessage, useField } from "formik"
 interface InputProps {
     label: string,
     name: string,
-    type?: 'text'| 'email' | 'password',
+    type?: 'text'| 'email' | 'password' | 'number',
     placeholder?: string;
     [key: string]: any,
 }

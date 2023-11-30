@@ -51,6 +51,10 @@ export const useAuthStore = () => {
       }
     }
 
+    const startRegister = async () => {
+      
+    }
+
     return {
         startLogin,
         checkAuth

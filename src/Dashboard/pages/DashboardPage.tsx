@@ -2,6 +2,8 @@
 
 export const DashboardPage = () => {
   return (
-    <div>DashboardPage</div>
+    <>
+      <h1>hola</h1>
+    </>
   )
 }

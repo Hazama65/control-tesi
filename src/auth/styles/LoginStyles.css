@@ -30,13 +30,27 @@ body{
 .box .imagen {
     flex: 1; /* Ocupa todo el espacio disponible en la caja */
     background: #4f7b10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 4em;
+}
+.box .imagen .svg{
+    margin-top: 50px;
+    font-size: 3em;
 }
 
-.box .imagen img {
+.box .imagen h1 {
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+
 
 .box form {
     flex: 1;

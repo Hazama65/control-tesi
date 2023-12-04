@@ -348,3 +348,117 @@ width: 80px;
 }
 
 
+/* table */
+
+.container-tabla {
+    position: relative;
+    width: calc(100% -300px);
+    margin: 30px;
+    padding: 20px;
+    display: grid;
+    grid-gap: 15px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.3);
+}
+
+.search-container {
+    margin-bottom: 1rem;
+}
+
+.search-container .search{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+
+
+.container-table-data {
+    margin-top: 1rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.filas {
+    background-color: #f5f5f5;
+}
+
+.celda-encabezado {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.ordenar-arriba,
+.ordenar-abajo,
+.arriba-abajo {
+    margin-left: 0.25rem;
+    vertical-align: middle;
+}
+
+.datos {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.pag-mov {
+    display: flex;
+}
+
+.pag-mov button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    margin-right: 0.25rem;
+    cursor: pointer;
+}
+
+.pag-mov button:hover:enabled {
+    background-color: #fff;
+}
+
+.w-5,
+.h-5 {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.consulta {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.more-pags {
+    padding: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.button {
+    width: 100%;
+    background-color: #dbf89e; 
+    color: var(--black); 
+    margin-top: 10px;
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}

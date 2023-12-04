@@ -1,6 +1,8 @@
 
 import {  Routes, Route, Navigate} from 'react-router-dom'
 import { DashboardPage } from '../Dashboard/pages/DashboardPage'
+import { DashboardIns } from '../Dashboard/pages/DashboardIns'
+import { DashboardReins } from '../Dashboard/pages/DashboardReins'
 
 
 export const ControlRouter = () => {
@@ -8,7 +10,7 @@ export const ControlRouter = () => {
     <>
 
         <Routes>
-                <Route path="/" element={<DashboardPage/>} />
+                <Route path="/" element={<DashboardReins/>} />
                 <Route 
                     path="*"
                     element={<Navigate to="/" />}

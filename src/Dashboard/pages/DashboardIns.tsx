@@ -6,8 +6,7 @@ import { TablesIns } from "../components/Tables";
 export const DashboardIns = () => {
   return (
     <>
-        <Dashboard
-            mainPage={
+        <Dashboard>
                 <>
                     <div className='cardBox'>
                         <div className='card'>
@@ -26,10 +25,9 @@ export const DashboardIns = () => {
                             </div>
                         </div>
                     </div>
-                        <TablesIns/>
+                    <TablesIns/>
                 </>
-            }
-        />
+        </Dashboard>
 
         
     </>

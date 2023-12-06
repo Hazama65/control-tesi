@@ -10,7 +10,9 @@ export const ControlRouter = () => {
     <>
 
         <Routes>
-                <Route path="/" element={<DashboardReins/>} />
+                <Route path="/" element={<DashboardPage/>} />
+                <Route path="/inscription" element={<DashboardIns/>} />
+                <Route path="/reinscription" element={<DashboardReins/>} />
                 <Route 
                     path="*"
                     element={<Navigate to="/" />}

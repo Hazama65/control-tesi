@@ -8,7 +8,7 @@ import {
   getPaginationRowModel,
   getFilteredRowModel,
   getSortedRowModel
-} from '@tanstack/react-table'
+} from '@tanstack/react-table';
 import defaultData from '../../data_insc.json'
 import classNames from 'classnames'
 import { rankItem } from '@tanstack/match-sorter-utils'

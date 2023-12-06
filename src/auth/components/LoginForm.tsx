@@ -59,7 +59,7 @@ export const LoginForm = () => {
                 id="password" 
                 required
               />
-            
+
             {/* <br /> */}
             <input type="submit" value="Ingresar" />
 

@@ -4,7 +4,7 @@ import { ErrorMessage, useField } from "formik"
 interface InputProps {
     label: string,
     name: string,
-    type?: 'text'| 'email' | 'password',
+    type?: 'text'| 'email' | 'password' | 'number',
     placeholder?: string;
     [key: string]: any,
 }
@@ -19,7 +19,7 @@ export const MyTextInput = ({label, ...props}: InputProps) => {
             <span>{label}</span>
             <input {...field} {...props} />
             <i></i> 
-           
+          
         </div>
         <ErrorMessage name={props.name} component="div" className="error-message" />
     </>

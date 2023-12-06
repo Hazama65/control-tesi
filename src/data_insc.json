@@ -1,0 +1,67 @@
+[
+
+    {
+        "document_name": "Relación de materias",
+        "document_status": "Approved",
+        "id_document_type": 1
+    },
+    {
+        "document_name": "Aceptación de Normatividad",
+        "document_status": "Approved",
+        "id_document_type": 2
+    },
+    {
+        "document_name": "Pagos",
+        "document_status": "Approved",
+        "id_document_type": 3
+    },
+    {
+        "document_name": "Certificado médico",
+        "document_status": "Approved",
+        "id_document_type": 4
+    },
+    {
+        "document_name": "Protesta institucional SGl-FO-IN-04.",
+        "document_status": "Approved",
+        "id_document_type": 5
+    },
+    {
+        "document_name": "Estudio socioeconómico SGl-FO-IN-02.",
+        "document_status": "Approved",
+        "id_document_type": 6
+    },
+    {
+        "document_name": "Vigencia IMSS",
+        "document_status": "Approved",
+        "id_document_type": 7
+    },
+    {
+        "document_name": "Certificado de bachillerato",
+        "document_status": "Approved",
+        "id_document_type": 8
+    },
+    {
+        "document_name": "Comprobante de domicilio",
+        "document_status": "Approved",
+        "id_document_type": 9
+    },
+    {
+        "document_name": "Credencial de elector",
+        "document_status": "Approved",
+        "id_document_type": 10
+    },    
+    {
+        "document_name": "CURP",
+        "document_status": "Approved",
+        "id_document_type": 11
+    },
+    {
+        "document_name": "Acta de nacimiento",
+        "document_status": "Approved",
+        "id_document_type": 12
+    }
+
+
+
+
+]

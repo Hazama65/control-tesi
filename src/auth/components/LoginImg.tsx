@@ -1,9 +1,13 @@
+import { IoSchool } from "react-icons/io5"
 
 export const LoginImg = () => {
 return (
     <>
         <div className="imagen">
-            {/* <img src="./tu_imagen.png" alt=""/>  */}
+            <div className="svg">
+                <IoSchool />
+            </div>
+            <h1>LEC</h1>
         </div>
     </>
 )

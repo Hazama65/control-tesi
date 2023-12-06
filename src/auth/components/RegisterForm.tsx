@@ -1,54 +1,146 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { Formik,Form } from 'formik';
+import * as Yup from 'yup';
+import { MyTextInput } from './formik/MyTextInput';
+import { MySelect } from './formik/MySelect';
+import { useEffect, useState } from 'react';
+import controlApi from '../../config/controlApi';
+import { RegisterProps } from '../interfaces/auth.interface';
+import { useAuthStore } from '../../hooks/useAuth';
 
+
+
+const initialRegisterValues = {
+    first_name:'',
+    last_name: '',
+    middle_name: '',
+    email: '',
+    password: '',
+    registration_number: '',
+    career: ''
+}
+
+const RegisterSchema = Yup.object().shape({
+    first_name: Yup.string().required('Nombre Requerido'),
+    last_name: Yup.string().required('Apellido Paterno Requerido'),
+    middle_name: Yup.string().required('Apellido Materno Requerido'),
+    email: Yup.string().email('El Email no es Valido').required('El Email es Requerido'),
+    password: Yup.string().required('Contraseña Requerida'),
+    registration_number: Yup.string().min(9,'La matricula debe tener 9 caracteres').required('Matricula Requerida'),
+    career:Yup.string().notOneOf(['Seleccione'],'Esta Opcion no es Permitida').required('Carrera Requerida')
+})
+
+interface DegreesProps {
+    degree: string;
+    id_degree: number;
+
+}
+
+const initialStateDegrees: DegreesProps = {
+    degree: '',
+    id_degree: 0
+}
 
 export const RegisterForm = () => {
+
+    const [degrees, setDegrees] =  useState<DegreesProps[]>([initialStateDegrees])
+
+    const {startRegister} = useAuthStore();
+
+    const onSubmit = (values:RegisterProps) => {
+        startRegister(values);
+    };
+
+    useEffect(() => {
+        
+        controlApi.get('/degrees')
+            .then((response) => setDegrees(response.data))
+            .catch(error => console.error(error));
+    
+        
+    }, [])
+    
+
+    
     return (
         <>
-            <form action="/process_registration" method="post">
-                <h2>Registration Form</h2>
+        <Formik
+        initialValues={initialRegisterValues}
+        validationSchema={RegisterSchema}
+        onSubmit={onSubmit}
+        >
+            {
+                ()=>(
+                    <Form>
+                        <h2>Registration Form</h2>
 
-                <div className="inputbox">
-                    <span>Nombre</span>
-                    <input type="text" id="first_name" name="first_name" required/>
-                    <i></i>
-                </div>
+                        <MyTextInput
+                            label={'Nombre'}
+                            name={'first_name'}
+                            id="first_name"
+                            required
+                        />
 
-                <div className="inputbox">
-                    <span>Apellido Paterno</span>
-                    <input type="text" id="last_name" name="last_name" required/>
-                    <i></i>
-                </div>
+                        <MyTextInput
+                            label={'Apellido Paterno'}
+                            name={'last_name'}
+                            id="last_name"
+                            required
+                        />
 
-                <div className="inputbox">
-                    <span>Apellido Materno</span>
-                    <input type="text" id="middle_name" name="middle_name" required/>
-                    <i></i>
-                </div>
+                        <MyTextInput
+                            label={'Apellido Materno'}
+                            name={'middle_name'}
+                            id="middle_name"
+                            required
+                        />
 
-                <div className="inputbox">
-                    <span>Correo Electronico</span>
-                    <input type="email" id="email" name="email" required/>
-                    <i></i>
-                </div>
+                        <MyTextInput
+                            label={'Email'}
+                            name={'email'}
+                            id="email"
+                            required
+                        />
+                        
+                        <MyTextInput
+                            label={'Contraseña'}
+                            name={'password'}
+                            id="password"
+                            required
+                        />
+                        <MyTextInput
+                            label={'Matricula'}
+                            name={'registration_number'}
+                            id="registration_number"
+                            required
+                        />
 
-                <div className="inputbox">
-                    <span>Contraseña</span>
-                    <input type="password" id="password" name="password" required/>
-                    <i></i>
-                </div>
+                        <MySelect
+                            label={'Carrera'}
+                            name={'career'}
+                        >
+                            <option value="Seleccione">Seleccione</option>
+                            {
+                                (degrees) && degrees.map( degree => (
 
-                <div className="inputbox">
-                    <span>Matricula</span>
-                    <input type="text" id="registration_number" name="registration_number" required/>
-                    <i></i>
-                </div>
+                                    <option key={degree.degree} value={degree.id_degree}>{degree.degree}</option>
+                                ))
+                            }
+                        </MySelect>
+                        
 
-                <input type="submit" value="Registrate"/>
+                        <input type="submit" value="Registrate" />
 
-                <div className="register-link">
-                    <p>¿Ya tienes Cuenta? <Link to={'/Login'}>Ingresa</Link></p>
-                </div>
-            </form>
+                        <div className="register-link">
+                            <p>¿Ya tienes Cuenta? <Link to={'/auth/login'}>Ingresa</Link></p>
+                        </div> 
+
+                    </Form>
+                )
+            }
+
+        </Formik>
+
         </>
     )
 }

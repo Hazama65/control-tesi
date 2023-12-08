@@ -12,6 +12,7 @@
     --white: #ffffff;
     --gray: #f5f5f5;
     --black: #222;
+    --black1: #3d3d3d;
     --black2: #999;
 }
 
@@ -294,32 +295,45 @@ width: 80px;
     grid-gap: 30px;
 }
 
-.containerInfo .Info{
+.containerInfo .Info-title{
     background: var(--white);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
 }
-.containerInfo .Info span {
+.containerInfo .Info-title span {
     text-align: center;
-    background: black;
+    background: var(--black1);
     color: var(--white);
     border-radius: 20px;
     padding: 10px;
 }
+.containerInfo .divInfo {
+    display: flex;
+
+}
+.containerInfo .divInfo .Info{
+    width: 50%;
+    height:min-content;
+    background: var(--white);
+    padding: 30px;
+    margin: 1%;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
 
 .containerInfo .InfoColumns {
-    display: flex;
     width: 100%;
-    justify-content: space-between;
-    margin-top: 20px;
 }
 
 .containerInfo .Info .text {
+    
     justify-content: center;
-    margin-top: 15px;
     line-height: 1.6;
     font-size: 1rem;
     color: #555;

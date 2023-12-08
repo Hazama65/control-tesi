@@ -1,18 +1,20 @@
 
-interface InputProps{
+interface InputProps {
     title: string,
     content: any
 }
 
-const ContainerInfo = ({title,content}:InputProps) => (
-    <div className="containerInfo">
-        <div className="Info">
-            <span>{title}</span>
-            <div className="InfoColumns">
-                {content}
+const ContainerInfo = ({ title, content }: InputProps) => (
+    <>
+        <div className="containerInfo">
+            <div className="Info-title">
+                <span>{title}</span>
             </div>
+                <div className="divInfo">
+                    {content}
+                </div>
         </div>
-    </div>
+    </>
 );
 
 export default ContainerInfo;

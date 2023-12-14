@@ -4,23 +4,16 @@ import DataTable from "react-data-table-component"
 import { useRegister } from "../../hooks/useRegister";
 import controlApi from "../../config/controlApi";
 
-// type RowType = {
-//   name: string;
-//   email: string;
-//   id: number;
-//   // Otras propiedades...
-// };
 
-
-export const TablesIns = () => {
+export const TablesReins = () => {
   
   const [fileData, setFileData] = useState<any>({});
 
-  const { getData, dataDocument } = useRegister()
+  const { getDataReinscription, dataDocumentReinscription } = useRegister()
   
   useEffect(() => {
     
-      getData();
+    getDataReinscription();
    
   }, []);
   
@@ -75,7 +68,7 @@ export const TablesIns = () => {
     const formData = new FormData();
     formData.append('id_document_type', id);
     formData.append('file', files[0]);
-    formData.append('id_register_type', '1');
+    formData.append('id_register_type', '2');
 
     controlApi.post('/documentUser/create', formData, {
       headers: {
@@ -83,7 +76,7 @@ export const TablesIns = () => {
       },
     })
     .then( () => {
-      getData()
+        getDataReinscription()
     } )
 
 
@@ -100,14 +93,14 @@ export const TablesIns = () => {
 
       <div className='search-container'>
         <div className='relative'>
-          <h2>Carga de documentos para Inscripcion</h2>
+          <h2>Carga de documentos para Reinscripcion</h2>
         </div>
       </div>
 
       <div className='container-table-data'>
         <DataTable
           columns={columns}
-          data={dataDocument}
+          data={dataDocumentReinscription}
           pagination
         >
 

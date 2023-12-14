@@ -376,6 +376,39 @@ width: 80px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.3);
 }
 
+.container-form-inscription {
+    position: relative;
+    margin: 30px;
+    padding: 30px;
+    display: grid;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.3);
+}
+
+.custom-submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4caf50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+  }
+  
+  .custom-submit-button:hover {
+    background-color: #45a049; /* Cambia el color de fondo al pasar el ratón */
+  }
+
+.select-container {
+    display: flex;
+    gap: 10px; /* Espacio entre los selects */
+  }
 .search-container {
     margin-bottom: 1rem;
 }
@@ -476,3 +509,51 @@ width: 80px;
     border-radius: 5px; 
     cursor: pointer; 
 }
+
+/* Estilo para el contenedor del botón de carga de archivos */
+.custom-file-input {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Ocultar el texto predeterminado del botón de carga de archivos */
+  .custom-file-input input[type="file"] {
+    display: none;
+  }
+  
+  /* Estilo personalizado para el botón de carga de archivos */
+  .custom-file-input label.upload-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Estilo adicional al pasar el ratón sobre el botón */
+  .custom-file-input label.upload-btn:hover {
+    background-color: #2980b9;
+  }
+
+  .upload-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #27ae60; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .ver-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #148bfa; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+

@@ -1,9 +1,11 @@
 import { ErrorMessage, useField } from "formik";
+import { ChangeEvent } from "react";
 
 interface Props{
     label :string;
     name :string;
     placeholder? :string;
+    onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
     [x:string]:any;
 }
 
